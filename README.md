@@ -1,5 +1,7 @@
 # Handwriting practice sheet generators
 
+Developed using Claude AI and Claude Code directed by Randall Desmond, rdesmond@rmd3.com
+
 Two small Python scripts that turn a JSON description of what to practice into
 a printable US Letter PDF worksheet: ruled rows with a dark model to look at,
 gray copies to trace, and blank ruled space to write in.
@@ -52,8 +54,6 @@ Each script searches for a `node_modules/@fontsource` folder in this order:
 1. the folder named by the `FONTSOURCE_DIR` environment variable, if set
 2. the current working directory
 3. the folder the script is in
-4. your home folder, then `~/hw`
-5. anywhere under your home folder (slow; last resort)
 
 If you run `npm install` in the repository folder, case 3 always works, so you
 can run the scripts from anywhere. If no fonts are found, the script exits with
@@ -309,12 +309,6 @@ for n in latin-print-cursive latin-print-cursive-75; do
 for n in arabic arabic-75; do
   python3 handwriting_sheet_arabic.py examples/$n.json examples/rendered/$n.pdf; done
 ```
-
-## Where this came from
-
-The scripts and the layout specification were developed with Claude, from the
-brief in [LAYOUT_SPEC.md](LAYOUT_SPEC.md). The `scale` option and the solid
-filling of overlapping joins were added afterwards.
 
 ## License
 

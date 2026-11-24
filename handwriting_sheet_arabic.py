@@ -32,7 +32,6 @@ Text is shaped with HarfBuzz and drawn as glyph outlines, so letters join and
 vowel marks sit where the font puts them. Don't replace that with a plain
 drawString call: it would give disconnected, left-to-right letters.
 """
-import glob
 import io
 import json
 import os
@@ -94,20 +93,15 @@ SMALL = "و"          # letter whose head defines the dashed midline
 
 # ------------------------------------------------------------------ fonts ---
 def find_fontsource():
-    """Locate node_modules/@fontsource near the script, cwd, or home."""
+    """Locate node_modules/@fontsource: $FONTSOURCE_DIR, the cwd, or the script's folder."""
     here = os.path.dirname(os.path.abspath(__file__))
     probe = FONT_FILE.split("/")[0]
-    for base in (os.environ.get("FONTSOURCE_DIR"), os.getcwd(), here,
-                 os.path.expanduser("~"), os.path.expanduser("~/hw")):
+    for base in (os.environ.get("FONTSOURCE_DIR"), os.getcwd(), here):
         if not base:
             continue
         for cand in (base, os.path.join(base, "node_modules", "@fontsource")):
             if os.path.isdir(os.path.join(cand, probe)):
                 return cand
-    for hit in glob.glob(os.path.expanduser("~/**/node_modules/@fontsource"),
-                         recursive=True):
-        if os.path.isdir(os.path.join(hit, probe)):
-            return hit
     sys.exit(f"Font not found. Run: npm i @fontsource/{probe}  "
              "(or set FONTSOURCE_DIR)")
 
