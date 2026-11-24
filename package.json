@@ -1,0 +1,10 @@
+{
+  "name": "handwriting-sheets",
+  "private": true,
+  "description": "Fonts for the handwriting practice sheet generators",
+  "dependencies": {
+    "@fontsource/edu-sa-beginner": "^5.3.0",
+    "@fontsource/playwrite-us-trad": "^5.3.0",
+    "@fontsource/scheherazade-new": "^5.3.0"
+  }
+}

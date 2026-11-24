@@ -1,0 +1,4 @@
+reportlab
+fonttools
+uharfbuzz
+pymupdf    # only needed by preview.py
