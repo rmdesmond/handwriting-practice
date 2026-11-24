@@ -23,6 +23,7 @@ fonts) is fixed in the scripts; the full layout specification is in
 | `.gitignore` | Ignores `node_modules/`, `.venv/`, generated PDFs and preview images. |
 | `LAYOUT_SPEC.md` | The layout specification the scripts implement, and the rules for choosing content. |
 | `LICENSE` | MIT licence for the code. |
+| `examples/` | Sample input files, with the PDFs they make in `examples/rendered/` (see [Examples](#examples)). |
 
 ## Requirements
 
@@ -83,8 +84,12 @@ python3 handwriting_sheet_arabic.py        # writes arabic-handwriting-practice.
 python3 preview.py handwriting-practice.pdf   # writes handwriting-practice-p1.png
 ```
 
-Then save one of the input files below as, say, `desmond.json`, and run
-`python3 handwriting_sheet.py desmond.json desmond.pdf`.
+or make one of the [examples](#examples):
+
+```sh
+python3 handwriting_sheet.py examples/latin-print-cursive.json latin.pdf
+python3 handwriting_sheet_arabic.py examples/arabic.json arabic.pdf
+```
 
 Print at 100% ("actual size"), not "fit to page", or the line heights come out
 slightly off.
@@ -274,6 +279,36 @@ scripts measure the real glyph heights to size the text, so no other change is
 needed. For a mushaf-style Arabic font such as Amiri Quran, expect to need
 taller rows: its stacked letters and high vowel marks don't fit the standard
 row pitch.
+
+## Examples
+
+Each input file in `examples/` has its finished PDF in `examples/rendered/`,
+so you can see the result without installing anything.
+
+| Input | Script | Sheet |
+|---|---|---|
+| `examples/latin-print-cursive.json` | Latin | Letters a to e: print on top, cursive below, each with five letter rows and two word rows. Standard size. |
+| `examples/latin-print-cursive-75.json` | Latin | Letters f to l, laid out the same way, at 75% size, which fits 9 rows per half: seven letters and two word rows. |
+| `examples/arabic.json` | Arabic | Seven letters (س ف ق ك ع ه ي) on top; joined forms and vocalized words below. Standard size. |
+| `examples/arabic-75.json` | Arabic | Seven letters (ج ح خ د ر ط ص) and joined forms on top; nine rows of vocalized words below. 75% size. |
+
+The Arabic words, with their meanings:
+
+- `arabic.json`: سَمَك fish, قَلَم pen, عَسَل honey, قَمَر moon, فِيل elephant,
+  كَلْب dog, بَيْت house, سَيْف sword.
+- `arabic-75.json`: جَمَل camel, حَجَر stone, خُبْز bread, دَار home, طِفْل child,
+  صَبْر patience, رِجْل leg, ذَهَب gold, زَيْت oil, وَرْد roses, مَاء water,
+  نُور light, شَجَرَة tree, بَحْر sea, صَدِيق friend, طَرِيق road, خَيْر good,
+  حُبّ love.
+
+To rebuild the rendered PDFs after changing a script:
+
+```sh
+for n in latin-print-cursive latin-print-cursive-75; do
+  python3 handwriting_sheet.py examples/$n.json examples/rendered/$n.pdf; done
+for n in arabic arabic-75; do
+  python3 handwriting_sheet_arabic.py examples/$n.json examples/rendered/$n.pdf; done
+```
 
 ## Where this came from
 

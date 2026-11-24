@@ -1,7 +1,7 @@
 node_modules/
 __pycache__/
 *.pdf
+!examples/rendered/*.pdf
 *.png
 .venv/
 .DS_Store
-examples/

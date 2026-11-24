@@ -1,0 +1,99 @@
+{
+  "title": "Arabic Handwriting Practice",
+  "sections": [
+    {
+      "heading": "Arabic letters on their own",
+      "rows": [
+        {
+          "items": [
+            "س"
+          ],
+          "traces": 3
+        },
+        {
+          "items": [
+            "ف"
+          ],
+          "traces": 3
+        },
+        {
+          "items": [
+            "ق"
+          ],
+          "traces": 3
+        },
+        {
+          "items": [
+            "ك"
+          ],
+          "traces": 3
+        },
+        {
+          "items": [
+            "ع"
+          ],
+          "traces": 3
+        },
+        {
+          "items": [
+            "ه"
+          ],
+          "traces": 3
+        },
+        {
+          "items": [
+            "ي"
+          ],
+          "traces": 3
+        }
+      ]
+    },
+    {
+      "heading": "Joined letters and words",
+      "rows": [
+        {
+          "items": [
+            "سسس"
+          ],
+          "traces": 2
+        },
+        {
+          "items": [
+            "ففف",
+            "ققق"
+          ]
+        },
+        {
+          "items": [
+            "ككك",
+            "ععع"
+          ]
+        },
+        {
+          "items": [
+            "سَمَك",
+            "قَلَم"
+          ]
+        },
+        {
+          "items": [
+            "عَسَل",
+            "قَمَر"
+          ]
+        },
+        {
+          "items": [
+            "فِيل",
+            "كَلْب"
+          ]
+        },
+        {
+          "items": [
+            "بَيْت",
+            "سَيْف"
+          ]
+        }
+      ]
+    }
+  ]
+}

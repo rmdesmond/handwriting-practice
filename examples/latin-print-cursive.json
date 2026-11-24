@@ -1,0 +1,71 @@
+{
+  "title": "Print and Cursive Practice: a to e",
+  "sections": [
+    {
+      "font": "Print",
+      "heading": "Print letters a to e",
+      "rows": [
+        {
+          "pair": "Aa"
+        },
+        {
+          "pair": "Bb"
+        },
+        {
+          "pair": "Cc"
+        },
+        {
+          "pair": "Dd"
+        },
+        {
+          "pair": "Ee"
+        },
+        {
+          "items": [
+            "bad",
+            "cab"
+          ]
+        },
+        {
+          "items": [
+            "bed",
+            "bead"
+          ]
+        }
+      ]
+    },
+    {
+      "font": "Cursive",
+      "heading": "Cursive letters a to e",
+      "rows": [
+        {
+          "pair": "Aa"
+        },
+        {
+          "pair": "Bb"
+        },
+        {
+          "pair": "Cc"
+        },
+        {
+          "pair": "Dd"
+        },
+        {
+          "pair": "Ee"
+        },
+        {
+          "items": [
+            "bad",
+            "cab"
+          ]
+        },
+        {
+          "items": [
+            "bed",
+            "bead"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "title": "Print and Cursive Practice: f to l (75%)",
+  "sections": [
+    {
+      "font": "Print",
+      "heading": "Print letters f to l (75% size)",
+      "rows": [
+        {
+          "pair": "Ff"
+        },
+        {
+          "pair": "Gg"
+        },
+        {
+          "pair": "Hh"
+        },
+        {
+          "pair": "Ii"
+        },
+        {
+          "pair": "Jj"
+        },
+        {
+          "pair": "Kk"
+        },
+        {
+          "pair": "Ll"
+        },
+        {
+          "items": [
+            "fig",
+            "jig",
+            "hill"
+          ]
+        },
+        {
+          "items": [
+            "gift",
+            "high",
+            "half"
+          ]
+        }
+      ],
+      "scale": 0.75
+    },
+    {
+      "font": "Cursive",
+      "heading": "Cursive letters f to l (75% size)",
+      "rows": [
+        {
+          "pair": "Ff"
+        },
+        {
+          "pair": "Gg"
+        },
+        {
+          "pair": "Hh"
+        },
+        {
+          "pair": "Ii"
+        },
+        {
+          "pair": "Jj"
+        },
+        {
+          "pair": "Kk"
+        },
+        {
+          "pair": "Ll"
+        },
+        {
+          "items": [
+            "fig",
+            "jig",
+            "hill"
+          ]
+        },
+        {
+          "items": [
+            "gift",
+            "high",
+            "half"
+          ]
+        }
+      ],
+      "scale": 0.75
+    }
+  ]
+}
