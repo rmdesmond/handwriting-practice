@@ -28,7 +28,6 @@ More than two sections flow onto additional pages, two per page.
 Cursive text is shaped with HarfBuzz and drawn as glyph outlines, so letters
 inside a word really join. Don't replace that with a plain drawString call.
 """
-import glob
 import io
 import json
 import os
@@ -80,20 +79,15 @@ FONT_FILES = {
 
 # ------------------------------------------------------------------ fonts ---
 def find_fontsource():
-    """Locate node_modules/@fontsource near the script, cwd, or home."""
+    """Locate node_modules/@fontsource: $FONTSOURCE_DIR, the cwd, or the script's folder."""
     here = os.path.dirname(os.path.abspath(__file__))
     probes = {rel.split("/")[0] for rel in FONT_FILES.values()}
-    for base in (os.environ.get("FONTSOURCE_DIR"), os.getcwd(), here,
-                 os.path.expanduser("~"), os.path.expanduser("~/hw")):
+    for base in (os.environ.get("FONTSOURCE_DIR"), os.getcwd(), here):
         if not base:
             continue
         for cand in (base, os.path.join(base, "node_modules", "@fontsource")):
             if all(os.path.isdir(os.path.join(cand, p)) for p in probes):
                 return cand
-    for hit in glob.glob(os.path.expanduser("~/**/node_modules/@fontsource"),
-                         recursive=True):
-        if all(os.path.isdir(os.path.join(hit, p)) for p in probes):
-            return hit
     sys.exit("Fonts not found. Run: npm i @fontsource/edu-sa-beginner "
              "@fontsource/playwrite-us-trad  (or set FONTSOURCE_DIR)")
 
